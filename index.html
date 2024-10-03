@@ -4,50 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HW11</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400,500,600,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <script type="module" crossorigin src="/goit-js-hw-11/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/goit-js-hw-11/assets/index-DPqItAR9.css">
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-11/assets/vendor-5ObWk2rO.js">
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-11/assets/vendor-DumFYO8Z.css">
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-11/assets/index-HnjPdE1L.css">
   </head>
   <body>
     <main>
-      <div class="search-container">
+      <form class="search-container">
         <input
           class="search-input"
+          name="query"
           type="text"
           placeholder="Search images..."
+          required
         /><button class="search-button" type="submit">Search</button>
-      </div>
-      <ul class="gallery-list">
-        <li class="gallery-item">
-          <div class="img-container">
-            <img src="" alt="" />
-          </div>
-          <ul class="info-list">
-            <li class="info-item">
-              <p class="info-name">Likes</p>
-              <p class="info-value">1813</p>
-            </li>
-            <li>
-              <p class="info-name">Views</p>
-              <p class="info-value">900290</p>
-            </li>
-            <li>
-              <p class="info-name">Comments</p>
-              <p class="info-value">229</p>
-            </li>
-            <li>
-              <p class="info-name">Downloads</p>
-              <p class="info-value">610937</p>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </main>
+      </form>
 
+      <ul class="gallery-list"></ul>
+    </main>
+    <span class="loader"></span>
   </body>
 </html>

@@ -15,6 +15,7 @@ function handleFormSubmit(event) {
   event.preventDefault();
   const form = event.currentTarget;
   const { query } = form.elements;
+  galleryEl.innerHTML = '';
 
   loaderEl.style.display = 'block';
 

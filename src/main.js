@@ -19,7 +19,20 @@ function handleFormSubmit(event) {
 
   loaderEl.style.display = 'block';
 
-  fetchImg(query.value.trim())
+  const searchValue = query.value.trim();
+
+  if (!searchValue) {
+    iziToast.error({
+      position: 'topRight',
+      iconColor: '#FAFAFB',
+      message: 'Сan not be empty or contain only spaces!',
+      backgroundColor: '#EF4040',
+    });
+    loaderEl.style.display = 'none';
+    return;
+  }
+
+  fetchImg(searchValue)
     .then(data => {
       const imgArr = data.hits;
 
@@ -38,7 +51,14 @@ function handleFormSubmit(event) {
       }
     })
     .catch(err => {
-      console.error(err);
+      iziToast.error({
+        position: 'topRight',
+        iconColor: '#FAFAFB',
+        message: `An error occurred. Please try again later!`,
+        backgroundColor: '#FF0000',
+      });
+
+      console.log(err);
     })
     .finally(() => {
       loaderEl.style.display = 'none';
